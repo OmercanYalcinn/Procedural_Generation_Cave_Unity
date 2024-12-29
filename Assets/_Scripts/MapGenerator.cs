@@ -20,7 +20,7 @@ public class MapGenerator : MonoBehaviour
     // creation of 2d array for the 2d map
     int[,] map;
 
-    void Start(){
+    public void GenerateMap(){
         // after the creation of the map according to width and height of 2d map that we would like to create
         map = new int[width, height];
         RandomFillMap();
@@ -56,4 +56,11 @@ public class MapGenerator : MonoBehaviour
             }
         }
     }
+
+    // Methods to update parameters from UI
+    public void SetWidth(int newWidth) => width = newWidth;
+    public void SetHeight(int newHeight) => height = newHeight;
+    public void SetRandomFillPercent(int fillPercent) => randomFillPercent = fillPercent;
+    public void SetSeed(string newSeed) => seed = newSeed;
+    public void SetUseRandomSeed(bool useRandom) => useRandomSeed = useRandom;
 }
